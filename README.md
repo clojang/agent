@@ -7,7 +7,7 @@
 
 *Startup JVM Agent for Clojang*
 
-![Clojars Project](http://clojars.org/clojang-agent/latest-version.svg)
+[![Clojars Project](https://img.shields.io/clojars/v/clojang/agent.svg)](https://clojars.org/clojang/agent)
 
 
 #### Table of Contents
