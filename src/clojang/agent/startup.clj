@@ -1,7 +1,7 @@
 (ns clojang.agent.startup
   ""
   (:require [clojure.tools.logging :as log]
-            [jiface.nodes :as nodes]
+            [jiface.otp.nodes :as nodes]
             [jiface.util :as util]
             [twig.core :as twig])
   (:import [java.lang.instrument])
