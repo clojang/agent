@@ -22,8 +22,8 @@
 (defn perform-gui-tasks
   "Close the custom splash screen."
   []
-  (-> (java.awt.SplashScreen/getSplashScreen)
-      (.close)))
+  (if-let [screen (java.awt.SplashScreen/getSplashScreen)]
+    (.close screen)))
 
 (defn perform-node-tasks
   "This is the function that sets up a running node for a given JVM."
