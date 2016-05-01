@@ -11,10 +11,13 @@
 (defn get-node-name
   "Get the node name."
   []
-  (format "%s@%s"
-          (if (System/getProperty "node.sname")
-              (System/getProperty "node.name"))
-          (util/get-hostname)))
+  (let [short-name (System/getProperty "node.sname")
+        long-name (System/getProperty "node.name")]
+    (format "%s@%s"
+            (if-not (nil? short-name)
+              short-name
+              long-name)
+            (util/get-hostname))))
 
 (defn perform-gui-tasks
   "Close the custom splash screen."
