@@ -7,14 +7,14 @@
 *Startup JVM Agent for Clojang*
 
 
-#### Table of Contents
+#### Contents
 
 * [About](#about-)
 * [Usage](#usage-)
 * [License](#license-)
 
 
-## About [&#x219F;](#table-of-contents)
+## About [&#x219F;](#contents)
 
 The Clojang Agent is intended to perform one significant task and one minor one:
 
@@ -22,7 +22,7 @@ The Clojang Agent is intended to perform one significant task and one minor one:
 * Close the splash image that Clojang displays
 
 
-## Usage [&#x219F;](#table-of-contents)
+## Usage [&#x219F;](#contents)
 
 To use the agent, update your ``project.clj`` (either top-level or one of your profiles) to include the following:
 
@@ -39,7 +39,7 @@ To use the agent, update your ``project.clj`` (either top-level or one of your p
 ```
 
 
-## License [&#x219F;](#table-of-contents)
+## License [&#x219F;](#contents)
 
 ```
 Copyright © 2016 Duncan McGreggor
