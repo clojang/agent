@@ -1,4 +1,4 @@
-(defproject clojang/agent "0.1.1"
+(defproject clojang/agent "0.1.2"
   :description "Startup JVM Agent for Clojang"
   :url "https://github.com/clojang/agent"
   :scm {
