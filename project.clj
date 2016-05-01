@@ -1,4 +1,4 @@
-(defproject clojang/agent "0.1.2"
+(defproject clojang/agent "0.1.3"
   :description "Startup JVM Agent for Clojang"
   :url "https://github.com/clojang/agent"
   :scm {
@@ -8,7 +8,8 @@
     :name "Apache License, Version 2.0"
     :url  "http://www.apache.org/licenses/LICENSE-2.0"}
   :dependencies [
-    [clojang/jiface "0.1.1"]
+    [clojang/jiface "0.1.2-SNAPSHOT"]
+    [dire "0.5.4"]
     [twig "0.1.6"]]
   :manifest {"Premain-Class" "clojang.agent.startup"}
   :aot [clojang.agent.startup]
