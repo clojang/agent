@@ -1,6 +1,7 @@
 (ns clojang.agent.startup
   ""
-  (:require [clojure.tools.logging :as log]
+  (:require [clojure.string :as string]
+            [clojure.tools.logging :as log]
             [dire.core :refer [with-handler!]]
             [jiface.otp.nodes :as nodes]
             [jiface.util :as util]
@@ -42,4 +43,4 @@
 (with-handler! #'perform-gui-tasks
   java.awt.HeadlessException
   (fn [e & args]
-    (log/warn (.getMessage e))))
+    (log/warn (string/trim (.getMessage e)))))
