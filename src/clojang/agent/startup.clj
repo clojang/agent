@@ -35,10 +35,18 @@
     (log/infof "Bringing up OTP node on %s ..." node-name)
     (nodes/node node-name)))
 
+(defn headless?
+  "Check to see if this JVM is declared as being headless."
+  []
+  (if (nil? (System/getProperty "headless"))
+    true
+    false))
+
 (defn -premain
   [args instrument]
   (perform-node-tasks)
-  (perform-gui-tasks))
+  (if-not (headless?)
+    (perform-gui-tasks)))
 
 (with-handler! #'perform-gui-tasks
   java.awt.HeadlessException
