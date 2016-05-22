@@ -12,13 +12,11 @@
     [dire "0.5.4"]
     [clojusc/twig "0.2.1"]]
   :manifest {"Premain-Class" "clojang.agent.startup"}
+  :aot :all
   :profiles {
-    :uber {
-      :aot :all}
     :dev {
       :dependencies [
         [org.clojure/tools.namespace "0.2.11"]
         [clojusc/twig "0.2.1"]]
       :source-paths ["dev-resources/src"]
-      :aot [clojure.tools.logging.impl]
       :repl-options {:init-ns clojang.agent.dev}}})
