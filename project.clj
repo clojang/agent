@@ -13,6 +13,8 @@
     [clojusc/twig "0.2.1"]]
   :manifest {"Premain-Class" "clojang.agent.startup"}
   :profiles {
+    :uber {
+      :aot :all}
     :dev {
       :dependencies [
         [org.clojure/tools.namespace "0.2.11"]
