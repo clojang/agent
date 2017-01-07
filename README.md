@@ -1,8 +1,11 @@
-# clojang-agent [![Build Status][travis-badge]][travis][![Clojars Project][clojars-badge]][clojars]
+# clojang-agent
 
-[![Clojang logo][clojang-logo]][clojang-logo-large]
+[![Build Status][travis-badge]][travis]
+[![Clojars Project][clojars-badge]][clojars]
 
 *Startup JVM Agent for Clojang*
+
+[![Clojang logo][logo]][logo-large]
 
 
 #### Contents
@@ -50,7 +53,7 @@ Distributed under the Apache License Version 2.0.
 
 [travis]: https://travis-ci.org/clojang/agent
 [travis-badge]: https://travis-ci.org/clojang/agent.png?branch=master
-[clojang-logo]: resources/images/clojang-logo-250x.png
-[clojang-logo-large]: resources/images/clojang-logo-1000x.png
+[logo]: https://github.com/clojang/resources/blob/master/images/logo-5-250x.png
+[logo-large]: https://github.com/clojang/resources/blob/master/images/logo-5-1000x.png
 [clojars]: https://clojars.org/clojang/agent
 [clojars-badge]: https://img.shields.io/clojars/v/clojang/agent.svg
