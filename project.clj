@@ -1,5 +1,5 @@
 (defproject clojang/agent "0.2.0-SNAPSHOT"
-  :description "Startup JVM Agent for Clojang"
+  :description "Clojang Node and REPL Start-up"
   :url "https://github.com/clojang/agent"
   :scm {
     :name "git"

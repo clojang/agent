@@ -3,7 +3,7 @@
 [![Build Status][travis-badge]][travis]
 [![Clojars Project][clojars-badge]][clojars]
 
-*Startup JVM Agent for Clojang*
+*Clojang Node and REPL Start-up*
 
 [![Clojang logo][logo]][logo-large]
 
