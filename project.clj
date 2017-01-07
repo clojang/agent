@@ -10,13 +10,12 @@
   :dependencies [
     [clojang/jiface "0.2.0-SNAPSHOT"]
     [dire "0.5.4"]
-    [clojusc/twig "0.2.1"]]
+    [clojusc/twig "0.3.0"]]
   :manifest {"Premain-Class" "clojang.agent.startup"}
   :aot :all
   :profiles {
     :dev {
       :dependencies [
-        [org.clojure/tools.namespace "0.2.11"]
-        [clojusc/twig "0.2.1"]]
+        [org.clojure/tools.namespace "0.2.11"]]
       :source-paths ["dev-resources/src"]
       :repl-options {:init-ns clojang.agent.dev}}})
