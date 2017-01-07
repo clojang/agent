@@ -1,6 +1,6 @@
-# clojang-agent
-
+# agent
 [![Build Status][travis-badge]][travis]
+[![Dependencies Status][deps-badge]][deps]
 [![Clojars Project][clojars-badge]][clojars]
 
 *Clojang Node and REPL Start-up*
@@ -53,7 +53,9 @@ Distributed under the Apache License Version 2.0.
 
 [travis]: https://travis-ci.org/clojang/agent
 [travis-badge]: https://travis-ci.org/clojang/agent.png?branch=master
-[logo]: https://github.com/clojang/resources/blob/master/images/logo-5-250x.png
-[logo-large]: https://github.com/clojang/resources/blob/master/images/logo-5-1000x.png
+[deps]: http://jarkeeper.com/clojang/agent
+[deps-badge]: http://jarkeeper.com/clojang/agent/status.svg
 [clojars]: https://clojars.org/clojang/agent
 [clojars-badge]: https://img.shields.io/clojars/v/clojang/agent.svg
+[logo]: https://github.com/clojang/resources/blob/master/images/logo-5-250x.png
+[logo-large]: https://github.com/clojang/resources/blob/master/images/logo-5-1000x.png
