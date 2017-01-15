@@ -1,4 +1,7 @@
 language: clojure
+script:
+  - lein compile
+  - lein uberjar
 jdk:
   - oraclejdk8
   - oraclejdk7
