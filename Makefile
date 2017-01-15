@@ -5,5 +5,5 @@ ERL_LIBS := $(shell erl -eval "io:format(code:root_dir()),halt()" -noshell)
 CLOJURE_DEP := $(strip $(shell grep "org.clojure/clojure" project.clj))
 CLOJURE_VER := $(subst ], , $(word 3, $(CLOJURE_DEP)))
 
-include resources/make/code.mk
-include resources/make/test.mk
+include dev-resources/make/code.mk
+include dev-resources/make/test.mk
