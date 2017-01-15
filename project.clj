@@ -14,6 +14,13 @@
   :manifest {"Premain-Class" "clojang.agent.startup"}
   :aot :all
   :profiles {
+    :testing {
+       :plugins
+         [[lein-ancient "0.6.10"]
+          [jonase/eastwood "0.2.3" :exclusions [org.clojure/clojure]]
+          [lein-bikeshed "0.4.1"]
+          [lein-kibit "0.1.2" :exclusions [org.clojure/clojure]]
+          [venantius/yagni "0.1.4"]]}
     :dev {
       :dependencies [
         [org.clojure/tools.namespace "0.2.11"]]
