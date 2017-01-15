@@ -4,6 +4,7 @@
             [clojure.tools.logging :as log]
             [dire.core :refer [with-handler!]]
             [clojusc.twig :as logger]
+            [jiface.otp.messaging :as messaging]
             [jiface.otp.nodes :as nodes]
             [jiface.util :as util])
   (:import [java.lang.instrument]
@@ -30,12 +31,13 @@
   "This is the function that sets up a running node for a given JVM."
   []
   (logger/set-level! 'clojang :info)
-  (let [default-node-name (get-node-name)
-        default-node (nodes/node default-node-name)]
+  (let [default-node-name (get-node-name)]
     (log/infof "Bringing up OTP node on %s ..." default-node-name)
-    (-> default-node
-        (nodes/create-mbox)
-        (messaging/register-name const/default-mbox-name))))
+    (let [default-node (nodes/default-node default-node-name)
+          default-mbox (messaging/default-mbox
+                         default-node const/default-mbox-name)]
+      (log/info "Registered nodes with message boxes:"
+                (into [] (nodes/get-names default-node))))))
 
 (defn headless?
   "Check to see if this JVM is declared as being headless."
