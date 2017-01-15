@@ -1,11 +1,11 @@
 (ns clojang.agent.startup
   ""
-  (:require [clojure.tools.logging :as log]
+  (:require [clojang.agent.const :as const]
+            [clojure.tools.logging :as log]
             [dire.core :refer [with-handler!]]
             [clojusc.twig :as logger]
             [jiface.otp.nodes :as nodes]
-            [jiface.util :as util]
-            [clojang.agent.const :as const])
+            [jiface.util :as util])
   (:import [java.lang.instrument]
            [java.awt HeadlessException SplashScreen])
   (:gen-class
@@ -30,9 +30,12 @@
   "This is the function that sets up a running node for a given JVM."
   []
   (logger/set-level! 'clojang :info)
-  (let [node-name (get-node-name)]
-    (log/infof "Bringing up OTP node on %s ..." node-name)
-    (nodes/node node-name)))
+  (let [default-node-name (get-node-name)
+        default-node (nodes/node default-node-name)]
+    (log/infof "Bringing up OTP node on %s ..." default-node-name)
+    (-> default-node
+        (nodes/create-mbox)
+        (messaging/register-name const/default-mbox-name))))
 
 (defn headless?
   "Check to see if this JVM is declared as being headless."
