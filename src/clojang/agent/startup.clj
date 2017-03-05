@@ -6,7 +6,7 @@
             [clojusc.twig :as logger]
             [jiface.otp.messaging :as messaging]
             [jiface.otp.nodes :as nodes]
-            [jiface.util :as util])
+            [trifl.net :as net])
   (:import [java.lang.instrument]
            [java.awt HeadlessException SplashScreen])
   (:gen-class
@@ -19,7 +19,7 @@
     (if-not (nil? const/short-name)
       const/short-name
       const/long-name)
-    (util/get-hostname)))
+    (net/get-local-hostname)))
 
 (defn perform-gui-tasks
   "Close the custom splash screen."

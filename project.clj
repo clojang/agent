@@ -10,7 +10,8 @@
   :dependencies [
     [clojang/jiface "0.4.0-SNAPSHOT"]
     [dire "0.5.4"]
-    [clojusc/twig "0.3.0"]]
+    [clojusc/trifl "0.1.0-SNAPSHOT"]
+    [clojusc/twig "0.3.1"]]
   :manifest {"Premain-Class" "clojang.agent.startup"}
   :aot :all
   :profiles {
