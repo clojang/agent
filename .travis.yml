@@ -1,7 +1,9 @@
 language: clojure
 script:
-  - lein compile
-  - lein uberjar
+- lein compile
+- lein uberjar
 jdk:
-  - oraclejdk8
-  #- openjdk8
+- oraclejdk8
+notifications:
+  slack:
+    secure: JMZJdsYxAt03cDt1b+VTRZ/Dn/92DplKGHvxDbw3WhmFPDguPbiNAhZwtSnFPBDNfPKH8D31nLqVYQFCI/pmFksjj/qZYrZFI7LskS9c4qrSP25E6194xAODING+OgsYmtqAtS2DDjBfeUOw2vn+iFXJM9MgPjy9Pcx6DYXFf/La/ChDWoXY8gTS+HqT/0GzyeCzdF/UbpwJr1nEyGvcKZmUbDjatbwrnAY9sG4AQORmqDFRmgfsATpheR5nsE+kD0z2KtNxv+ypRsL/M59I72+sswB0LTL1/LRnXquh3UOnAWUG2T7Hn84V0ENOWdPgNNXGRdJwyLoZbfYq6DzYyYXyNPXz9ROCxXekPvoXZS/c2Cgnlwgk3cP1brl/HzwBKB7HRDkLlGrHOZE6M2Ez0USfAOo3gVRZ2TkjnDWKjbXplFSqUtpt5LuyMVOzETERdOcQddeyt85BGcE6Fsst7G6o3UlTB/e9TkmqW9NPeNosFPT7B6IJeDmrUzyrCGVuap2fwM3KTANP7CeDOMSyVpshbBC4Ztq2RB0AHL0nl+8NAob+NaDg6vNWmWdYDZIl8cJrPdtvtfiJvMzDU2AOut/sEk4Bo/B1wBXJ2LTpJmZuL7716sLzE5FOQbmAG66gG/rsNifO7SCw4SF8LsbIZQpn2Xje1w3DjbWhrzf8NNM=
