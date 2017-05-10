@@ -11,7 +11,7 @@
     [clojang/jiface "0.4.0-SNAPSHOT"]
     [dire "0.5.4"]
     [clojusc/trifl "0.1.0-SNAPSHOT"]
-    [clojusc/twig "0.3.1"]]
+    [clojusc/twig "0.3.2-SNAPSHOT"]]
   :manifest {"Premain-Class" "clojang.agent"}
   :profiles {
     :uberjar {:aot :all}
