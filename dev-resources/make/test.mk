@@ -1,14 +1,14 @@
 kibit:
-	@lein with-profile +testing kibit
+	@lein with-profile +test kibit
 
 bikeshed:
-	@lein with-profile +testing bikeshed
+	@lein with-profile +test bikeshed
 
 base-eastwood:
-	@lein with-profile +testing eastwood "$(EW_OPTS)"
+	@lein with-profile +test eastwood "$(EW_OPTS)"
 
 yagni:
-	@lein with-profile +testing yagni
+	@lein with-profile +test yagni
 
 eastwood:
 	@EW_OPTS="{:namespaces [:source-paths]}" make base-eastwood
@@ -21,8 +21,8 @@ lint-unused:
 lint-ns:
 	@EW_OPTS="{:linters [:unused-namespaces :wrong-ns-form] :namespaces [:source-paths]}" make base-eastwood
 
-check: lint
+check: lint check-deps
 	@lein test
 
-ancient:
-	@lein with-profile +testing ancient check.check-profiles
+check-deps:
+	@lein with-profile +test ancient check.check-profiles

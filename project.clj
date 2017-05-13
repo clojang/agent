@@ -9,9 +9,7 @@
     :url  "http://www.apache.org/licenses/LICENSE-2.0"}
   :dependencies [
     [clojang/jiface "0.4.0-SNAPSHOT"]
-    [dire "0.5.4"]
-    [clojusc/trifl "0.1.0-SNAPSHOT"]
-    [clojusc/twig "0.3.2-SNAPSHOT"]]
+    [clojusc/trifl "0.1.0-SNAPSHOT"]]
   :manifest {"Premain-Class" "clojang.agent"}
   :codox {
     :project {:name "clojang-agent"}
@@ -22,7 +20,7 @@
     :metadata {:doc/format :markdown}}
   :profiles {
     :uberjar {:aot :all}
-    :testing {
+    :test {
        :plugins
          [[lein-ancient "0.6.10"]
           [jonase/eastwood "0.2.3" :exclusions [org.clojure/clojure]]
