@@ -12,6 +12,7 @@
 
 * [About](#about-)
 * [Usage](#usage-)
+* [Documentation](#documentation-)
 * [License](#license-)
 
 
@@ -38,6 +39,13 @@ To use the agent, update your ``project.clj`` (either top-level or one of your p
   :aot [clojang.agent.startup]
   ...
 ```
+
+
+## Documentation [&#x219F;](#contents)
+
+The clojang-agent API reference is available here:
+
+ * http://clojang.github.io/agent
 
 
 ## License [&#x219F;](#contents)
