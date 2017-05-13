@@ -6,4 +6,5 @@ CLOJURE_DEP := $(strip $(shell grep "org.clojure/clojure" project.clj))
 CLOJURE_VER := $(subst ], , $(word 3, $(CLOJURE_DEP)))
 
 include dev-resources/make/code.mk
+include dev-resources/make/docs.mk
 include dev-resources/make/test.mk

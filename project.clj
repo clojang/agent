@@ -1,4 +1,4 @@
-(defproject clojang/agent "0.3.0"
+(defproject clojang/agent "0.4.0-SNAPSHOT"
   :description "Clojang Node and REPL Start-up"
   :url "https://github.com/clojang/agent"
   :scm {
@@ -8,12 +8,20 @@
     :name "Apache License, Version 2.0"
     :url  "http://www.apache.org/licenses/LICENSE-2.0"}
   :dependencies [
-    [clojang/jiface "0.3.0"]
+    [clojang/jiface "0.4.0-SNAPSHOT"]
     [dire "0.5.4"]
-    [clojusc/twig "0.3.0"]]
-  :manifest {"Premain-Class" "clojang.agent.startup"}
-  :aot :all
+    [clojusc/trifl "0.1.0-SNAPSHOT"]
+    [clojusc/twig "0.3.2-SNAPSHOT"]]
+  :manifest {"Premain-Class" "clojang.agent"}
+  :codox {
+    :project {:name "clojang-agent"}
+    :themes [:clojang]
+    :output-path "docs/current"
+    :doc-paths ["resources/docs"]
+    :namespaces [#"^clojang\.(?!test)"]
+    :metadata {:doc/format :markdown}}
   :profiles {
+    :uberjar {:aot :all}
     :testing {
        :plugins
          [[lein-ancient "0.6.10"]
@@ -25,4 +33,10 @@
       :dependencies [
         [org.clojure/tools.namespace "0.2.11"]]
       :source-paths ["dev-resources/src"]
-      :repl-options {:init-ns clojang.agent.dev}}})
+      :repl-options {:init-ns clojang.agent.dev}}
+    :docs {
+      :aot :all
+      :dependencies [[clojang/codox-theme "0.2.0-SNAPSHOT"]]
+      :plugins [
+        [lein-codox "0.10.3"]
+        [lein-simpleton "1.3.0"]]}})
