@@ -19,14 +19,15 @@
     :namespaces [#"^clojang\.(?!test)"]
     :metadata {:doc/format :markdown}}
   :profiles {
-    :uberjar {:aot :all}
+    :uberjar {
+      :aot :all}
     :test {
-       :plugins
-         [[lein-ancient "0.6.10"]
-          [jonase/eastwood "0.2.3" :exclusions [org.clojure/clojure]]
-          [lein-bikeshed "0.4.1"]
-          [lein-kibit "0.1.3" :exclusions [org.clojure/clojure]]
-          [venantius/yagni "0.1.4"]]}
+      :plugins [
+        [lein-ancient "0.6.10"]
+        [jonase/eastwood "0.2.3" :exclusions [org.clojure/clojure]]
+        [lein-bikeshed "0.4.1"]
+        [lein-kibit "0.1.3" :exclusions [org.clojure/clojure]]
+        [venantius/yagni "0.1.4"]]}
     :dev {
       :dependencies [
         [org.clojure/tools.namespace "0.2.11"]]
