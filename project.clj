@@ -13,6 +13,13 @@
     [clojusc/trifl "0.1.0-SNAPSHOT"]
     [clojusc/twig "0.3.2-SNAPSHOT"]]
   :manifest {"Premain-Class" "clojang.agent"}
+  :codox {
+    :project {:name "clojang-agent"}
+    :themes [:clojang]
+    :output-path "docs/current"
+    :doc-paths ["resources/docs"]
+    :namespaces [#"^clojang\.(?!test)"]
+    :metadata {:doc/format :markdown}}
   :profiles {
     :uberjar {:aot :all}
     :testing {
@@ -26,4 +33,10 @@
       :dependencies [
         [org.clojure/tools.namespace "0.2.11"]]
       :source-paths ["dev-resources/src"]
-      :repl-options {:init-ns clojang.agent.dev}}})
+      :repl-options {:init-ns clojang.agent.dev}}
+    :docs {
+      :aot :all
+      :dependencies [[clojang/codox-theme "0.2.0-SNAPSHOT"]]
+      :plugins [
+        [lein-codox "0.10.3"]
+        [lein-simpleton "1.3.0"]]}})
