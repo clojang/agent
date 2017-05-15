@@ -22,11 +22,12 @@
     :uberjar {
       :aot :all}
     :test {
+      :aot :all
       :plugins [
         [lein-ancient "0.6.10"]
         [jonase/eastwood "0.2.3" :exclusions [org.clojure/clojure]]
         [lein-bikeshed "0.4.1"]
-        [lein-kibit "0.1.3" :exclusions [org.clojure/clojure]]
+        [lein-kibit "0.1.5" :exclusions [org.clojure/clojure]]
         [venantius/yagni "0.1.4"]]}
     :dev {
       :dependencies [

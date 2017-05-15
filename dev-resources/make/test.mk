@@ -25,4 +25,4 @@ check: lint check-deps
 	@lein test
 
 check-deps:
-	@lein with-profile +test ancient check.check-profiles
+	@lein with-profile +test do ancient check :all
