@@ -22,13 +22,15 @@
 
 The Clojang Agent is intended to perform one significant task and one minor one:
 
-* Start up a JInterface node (in the same way that an Erlang shell or an LFE REPL when the BEAM is started in distributed mode, e.g., ``-sname mynode``)
+* Start up a JInterface node (in the same way that an Erlang shell or an LFE
+  REPL when the BEAM is started in distributed mode, e.g., `-sname mynode`)
 * Close the splash image that Clojang displays
 
 
 ## Usage [&#x219F;](#contents)
 
-To use the agent, update your ``project.clj`` (either top-level or one of your profiles) to include the following:
+To use the agent, update your `project.clj` (either top-level or one of your
+profiles) to include the following:
 
 ```clj
   ...
