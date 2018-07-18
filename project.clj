@@ -19,16 +19,27 @@
     :namespaces [#"^clojang\.(?!test)"]
     :metadata {:doc/format :markdown}}
   :profiles {
-    :uberjar {
+    :ubercompile {
       :aot :all}
+    :lint {
+      :source-paths ^:replace ["src"]
+      :test-paths ^:replace []
+      :plugins [
+        [jonase/eastwood "0.2.8"]
+        [lein-ancient "0.6.15"]
+        [lein-bikeshed "0.5.1"]
+        [lein-kibit "0.1.6"]
+        [venantius/yagni "0.1.4"]]}
     :test {
       :aot :all
       :plugins [
-        [lein-ancient "0.6.10"]
-        [jonase/eastwood "0.2.3" :exclusions [org.clojure/clojure]]
-        [lein-bikeshed "0.4.1"]
-        [lein-kibit "0.1.5" :exclusions [org.clojure/clojure]]
-        [venantius/yagni "0.1.4"]]}
+        [lein-ltest "0.3.0"]]
+      :source-paths ["test"]
+      :test-selectors {
+        :default :unit
+        :unit :unit
+        :system :system
+        :integration :integration}}
     :dev {
       :dependencies [
         [org.clojure/tools.namespace "0.2.11"]]
@@ -36,7 +47,30 @@
       :repl-options {:init-ns clojang.agent.dev}}
     :docs {
       :aot :all
-      :dependencies [[clojang/codox-theme "0.2.0-SNAPSHOT"]]
+      :dependencies [
+        [clojang/codox-theme "0.2.0-SNAPSHOT"]]
       :plugins [
         [lein-codox "0.10.3"]
-        [lein-simpleton "1.3.0"]]}})
+        [lein-simpleton "1.3.0"]]}}
+  :aliases {
+    ;; Dev Aliases
+    "repl" ["do"
+      ["clean"]
+      ["repl"]]
+    "ubercompile" ["do"
+      ["clean"]
+      ["with-profile" "+ubercompile" "compile"]]
+    "check-vers" ["with-profile" "+lint" "ancient" "check" ":all"]
+    "check-jars" ["with-profile" "+lint" "do"
+      ["deps" ":tree"]
+      ["deps" ":plugin-tree"]]
+    "check-deps" ["do"
+      ["check-jars"]
+      ["check-vers"]]
+    "kibit" ["with-profile" "+lint" "kibit"]
+    "eastwood" ["with-profile" "+lint" "eastwood" "{:namespaces [:source-paths]}"]
+    "lint" ["do"
+      ["kibit"]
+      ;["eastwood"]
+      ]
+    "ltest" ["with-profile" "+test" "ltest"]})
