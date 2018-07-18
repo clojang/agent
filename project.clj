@@ -8,8 +8,8 @@
     :name "Apache License, Version 2.0"
     :url  "http://www.apache.org/licenses/LICENSE-2.0"}
   :dependencies [
-    [clojang/jiface "0.4.0-SNAPSHOT"]
-    [clojusc/trifl "0.1.0-SNAPSHOT"]]
+    [clojang/jiface "0.5.0"]
+    [clojusc/trifl "0.3.0"]]
   :manifest {"Premain-Class" "clojang.agent"}
   :codox {
     :project {:name "clojang-agent"}
@@ -50,7 +50,7 @@
       :dependencies [
         [clojang/codox-theme "0.2.0-SNAPSHOT"]]
       :plugins [
-        [lein-codox "0.10.3"]
+        [lein-codox "0.10.4"]
         [lein-simpleton "1.3.0"]]}}
   :aliases {
     ;; Dev Aliases
