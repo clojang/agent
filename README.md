@@ -1,4 +1,5 @@
 # agent
+
 [![Build Status][travis-badge]][travis]
 [![Dependencies Status][deps-badge]][deps]
 [![Clojars Project][clojars-badge]][clojars]
@@ -13,6 +14,7 @@
 * [About](#about-)
 * [Usage](#usage-)
 * [Documentation](#documentation-)
+* [Donating](#donating-)
 * [License](#license-)
 
 
@@ -31,11 +33,11 @@ To use the agent, update your ``project.clj`` (either top-level or one of your p
 ```clj
   ...
   :dependencies [
-    [clojang/jiface "0.1.1"]
-    [clojang/agent "0.1.0"]
+    [clojang/jiface "0.5.0"]
+    [clojang/agent "0.4.0"]
     ...]
   :jvm-opts ["-Dnode.sname=clojang"]
-  :java-agents [[clojang/agent "0.1.0"]]
+  :java-agents [[clojang/agent "0.4.0"]]
   :aot [clojang.agent.startup]
   ...
 ```
@@ -48,10 +50,26 @@ The clojang-agent API reference is available here:
  * http://clojang.github.io/agent
 
 
+## Donating [&#x219F;](#contents)
+
+A donation account for supporting development on this project has been set up
+on Liberapay here:
+
+* [https://liberapay.com/clojang/donate](https://liberapay.com/clojang/donate)
+
+You can learn more about Liberapay on its [Wikipedia entry][libera-wiki] or on the
+service's ["About" page][libera-about].
+
+[libera-wiki]: https://en.wikipedia.org/wiki/Liberapay
+[libera-about]: https://liberapay.com/about/
+
+
 ## License [&#x219F;](#contents)
 
 ```
-Copyright © 2016 Duncan McGreggor
+Copyright © 2018 The Clojang Project
+
+Copyright © 2016-2017 Duncan McGreggor
 
 Distributed under the Apache License Version 2.0.
 ```
