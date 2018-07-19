@@ -1,12 +1,14 @@
 (ns clojang.agent.startup
   "Clojang JVM Agent startup."
-  (:require [clojang.agent.const :as const]
-            [clojure.tools.logging :as log]
-            [dire.core :refer [with-handler!]]
-            [jiface.otp.messaging :as messaging]
-            [jiface.otp.nodes :as nodes]
-            [trifl.net :as net])
-  (:import [java.awt HeadlessException SplashScreen]))
+  (:require
+    [clojang.agent.const :as const]
+    [dire.core :refer [with-handler!]]
+    [jiface.otp.messaging :as messaging]
+    [jiface.otp.nodes :as nodes]
+    [taoensso.timbre :as log]
+    [trifl.net :as net])
+  (:import
+    (java.awt HeadlessException SplashScreen)))
 
 (defn perform-gui-tasks
   "Close the custom splash screen."
