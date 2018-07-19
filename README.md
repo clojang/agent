@@ -35,11 +35,11 @@ profiles) to include the following:
 ```clj
   ...
   :dependencies [
-    [clojang/jiface "0.5.0"]
-    [clojang/agent "0.4.0"]
+    [clojang/jiface "0.6.0"]
+    [clojang/agent "0.6.0"]
     ...]
   :jvm-opts ["-Dnode.sname=clojang"]
-  :java-agents [[clojang/agent "0.4.0"]]
+  :java-agents [[clojang/agent "0.6.0"]]
   :aot [clojang.agent.startup]
   ...
 ```
