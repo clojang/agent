@@ -8,7 +8,7 @@
     :name "Apache License, Version 2.0"
     :url  "http://www.apache.org/licenses/LICENSE-2.0"}
   :dependencies [
-    [clojang/jiface "0.6.0-SNAPSHOT"]
+    [clojang/jiface "0.4.0"]
     [clojusc/trifl "0.3.0"]
     [clojusc/twig "0.3.3"]]
   :manifest {"Agent-Class" "clojang.agent.core"
