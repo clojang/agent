@@ -33,9 +33,10 @@
 (defn -main
   [& args]
   (logger/set-level! 'clojang :info)
-  (startup/perform-node-tasks (get-node-name))
-  (if-not (headless?)
-    (startup/perform-gui-tasks)))
+  (let [node-data (startup/perform-node-tasks (get-node-name))]
+    (if-not (headless?)
+      (startup/perform-gui-tasks))
+    node-data))
 
 (defn -agentmain
   [^String args ^Instrumentation instrumentation]

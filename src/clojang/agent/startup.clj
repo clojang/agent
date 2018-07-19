@@ -24,7 +24,11 @@
         default-mbox (messaging/default-mbox
                        default-node const/default-mbox-name)]
     (log/info "Registered nodes with message boxes:"
-              (vec (nodes/get-names default-node)))))
+              (vec (nodes/get-names default-node)))
+    {:node {:name node-name
+            :object default-node}
+     :mbox {:name const/default-mbox-name
+            :object default-mbox}}))
 
 (with-handler! #'perform-gui-tasks
   HeadlessException
