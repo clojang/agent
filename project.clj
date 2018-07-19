@@ -8,9 +8,14 @@
     :name "Apache License, Version 2.0"
     :url  "http://www.apache.org/licenses/LICENSE-2.0"}
   :dependencies [
-    [clojang/jiface "0.5.0"]
-    [clojusc/trifl "0.3.0"]]
-  :manifest {"Premain-Class" "clojang.agent"}
+    [clojang/jiface "0.6.0-SNAPSHOT"]
+    [clojusc/trifl "0.3.0"]
+    [clojusc/twig "0.3.3"]]
+  :manifest {"Agent-Class" "clojang.agent.core"
+             "Premain-Class" "clojang.agent.core"
+             "Can-Redefine-Classes" "true"}
+  :main clojang.agent.core
+  :aot [clojang.agent.core]
   :codox {
     :project {:name "clojang-agent"}
     :themes [:clojang]
@@ -19,8 +24,6 @@
     :namespaces [#"^clojang\.(?!test)"]
     :metadata {:doc/format :markdown}}
   :profiles {
-    :ubercompile {
-      :aot :all}
     :lint {
       :source-paths ^:replace ["src"]
       :test-paths ^:replace []
@@ -43,6 +46,8 @@
     :dev {
       :dependencies [
         [org.clojure/tools.namespace "0.2.11"]]
+      :plugins [
+        [bansd/deploy-uberjar "0.1.2"]]
       :source-paths ["dev-resources/src"]
       :repl-options {:init-ns clojang.agent.dev}}
     :docs {
@@ -57,9 +62,9 @@
     "repl" ["do"
       ["clean"]
       ["repl"]]
-    "ubercompile" ["do"
+    "compile" ["do"
       ["clean"]
-      ["with-profile" "+ubercompile" "compile"]]
+      ["compile"]]
     "check-vers" ["with-profile" "+lint" "ancient" "check" ":all"]
     "check-jars" ["with-profile" "+lint" "do"
       ["deps" ":tree"]
