@@ -1,3 +1,19 @@
+(defn get-banner
+  []
+  (try
+    (str
+      (slurp "resources/text/banner.txt")
+      ;(slurp "resources/text/loading.txt")
+      )
+    ;; If another project can't find the banner, just skip it.
+    (catch Exception _ "")))
+
+(defn get-prompt
+  [ns]
+  (str "\u001B[35m[\u001B[34m"
+       ns
+       "\u001B[35m]\u001B[33m λ\u001B[m=> "))
+
 (defproject clojang/agent "0.7.0-SNAPSHOT"
   :description "Clojang Node and REPL Start-up"
   :url "https://github.com/clojang/agent"
@@ -43,20 +59,23 @@
         :unit :unit
         :system :system
         :integration :integration}}
-    :dev {
-      :dependencies [
-        [org.clojure/tools.namespace "0.2.11"]]
-      :plugins [
-        [bansd/deploy-uberjar "0.1.2"]]
-      :source-paths ["dev-resources/src"]
-      :repl-options {:init-ns clojang.agent.dev}}
     :docs {
       :aot :all
       :dependencies [
         [clojang/codox-theme "0.2.0-SNAPSHOT"]]
       :plugins [
         [lein-codox "0.10.4"]
-        [lein-simpleton "1.3.0"]]}}
+        [lein-simpleton "1.3.0"]]}
+    :dev {
+      :dependencies [
+        [org.clojure/tools.namespace "0.2.11"]]
+      :plugins [
+        [bansd/deploy-uberjar "0.1.2"]]
+      :source-paths ["dev-resources/src"]
+      :repl-options {
+        :init-ns clojang.agent.repl
+        :prompt ~get-prompt
+        :init ~(println (get-banner))}}}
   :aliases {
     ;; Dev Aliases
     "repl" ["do"

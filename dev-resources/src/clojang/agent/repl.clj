@@ -2,7 +2,7 @@
   "A development namespace that imports other useful namespaces for easy
   prototyping, &c. The intended use is for this to be the initial namespace
   when running ``lein repl`` from the Clojang project directory."}
-  clojang.agent.dev
+  clojang.agent.repl
   (:require [clojure.core.match :refer [match]]
             [clojure.tools.logging :as log]
             [clojure.tools.namespace.repl :as repl]
