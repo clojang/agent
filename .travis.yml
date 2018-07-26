@@ -1,7 +1,6 @@
 language: clojure
 script:
-- lein compile
-- lein uberjar
+- lein build
 jdk:
 - oraclejdk8
 notifications:
