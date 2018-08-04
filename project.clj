@@ -95,7 +95,7 @@
     "eastwood" ["with-profile" "+lint" "eastwood" "{:namespaces [:source-paths]}"]
     "lint" ["do"
       ["kibit"]
-      ;["eastwood"]
+      ["eastwood"]
       ]
     "ltest" ["with-profile" "+test" "ltest"]
     "build" ["do"
