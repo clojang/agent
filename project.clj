@@ -9,8 +9,8 @@
     :url  "http://www.apache.org/licenses/LICENSE-2.0"}
   :dependencies [
     [clojang/jiface "0.6.1-1"]
-    [clojusc/trifl "0.3.0"]
-    [clojusc/twig "0.3.3"]]
+    [clojusc/trifl "0.4.2"]
+    [clojusc/twig "0.4.1"]]
   :manifest {"Agent-Class" "clojang.agent.core"
              "Premain-Class" "clojang.agent.core"
              "Can-Redefine-Classes" "true"}
@@ -28,11 +28,10 @@
       :source-paths ^:replace ["src"]
       :test-paths ^:replace []
       :plugins [
-        [jonase/eastwood "0.2.8"]
+        [jonase/eastwood "0.3.5"]
         [lein-ancient "0.6.15"]
-        [lein-bikeshed "0.5.1"]
-        [lein-kibit "0.1.6"]
-        [venantius/yagni "0.1.4"]]}
+        [lein-bikeshed "0.5.2"]
+        [lein-kibit "0.1.6"]]}
     :test {
       :aot :all
       :plugins [
@@ -55,7 +54,7 @@
       :dependencies [
         [clojang/codox-theme "0.2.0-SNAPSHOT"]]
       :plugins [
-        [lein-codox "0.10.4"]
+        [lein-codox "0.10.7"]
         [lein-simpleton "1.3.0"]]}}
   :aliases {
     ;; Dev Aliases
