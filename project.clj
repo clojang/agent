@@ -1,4 +1,4 @@
-(defproject clojang/agent "0.6.0"
+(defproject clojang/agent "0.6.1"
   :description "Clojang Node and REPL Start-up"
   :url "https://github.com/clojang/agent"
   :scm {
@@ -8,7 +8,7 @@
     :name "Apache License, Version 2.0"
     :url  "http://www.apache.org/licenses/LICENSE-2.0"}
   :dependencies [
-    [clojang/jiface "0.6.0"]
+    [clojang/jiface "0.6.1-1"]
     [clojusc/trifl "0.3.0"]
     [clojusc/twig "0.3.3"]]
   :manifest {"Agent-Class" "clojang.agent.core"
